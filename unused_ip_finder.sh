@@ -16,7 +16,7 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-# Check VPN connectivity by pinging the VCenter internal IP
+# Check VPN connectivity by pinging the always alive internal IP
 if ! ping -c 1 -W 2 "$alive_host" > /dev/null 2>&1; then
     echo "You are not connected to org VPN server. Please connect to the VPN first."
     exit 1
