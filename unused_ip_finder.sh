@@ -16,6 +16,12 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# Check if IP range is provided as argument
+if [ -z "$1" ]; then
+    echo "Usage: $0 <IP range>"
+    exit 1
+fi
+
 # Check VPN connectivity by pinging the always alive internal IP
 if ! ping -c 1 -W 2 "$alive_host" > /dev/null 2>&1; then
     echo "You are not connected to org VPN server. Please connect to the VPN first."
@@ -28,8 +34,7 @@ if [ ! -x "$nmap_path" ]; then
     exit 1
 fi
 
-# Prompt user for IP range
-read -p "Enter IP range for scan (e.g., 192.168.1.0/24): " ip_range
+ip_range="$1"
 
 # Temporary file for Nmap output
 nmap_output=$(mktemp)
