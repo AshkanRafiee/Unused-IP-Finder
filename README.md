@@ -23,9 +23,9 @@ Before using the tool, configure the following variables within the script to su
 1. **Configure the Script**: Modify `nmap_path`, `alive_host`, and `ports` variables in the script to reflect your specific network setup.
    
 2. **Execute the Script**: Run the script with sudo to ensure it has the necessary permissions:
-`sudo ./unused_ip_finder.sh`
+`sudo ./unused_ip_finder.sh <IP range>`
 
-3. **Input IP Range**: When prompted, input the IP range you wish to scan. The script accepts various formats, such as:
+3. **Input IP Range**: The script accepts various IP formats, such as:
 - CIDR notation (e.g., `192.168.1.0/24`)
 - A hyphenated range (e.g., `192.168.0-2.1/24`)
 - A single IP address (e.g., `192.168.1.100`)
