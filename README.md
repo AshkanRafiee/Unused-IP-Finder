@@ -14,14 +14,14 @@ This tool is designed for network administrators and IT professionals to identif
 
 Before using the tool, configure the following variables within the script to suit your environment:
 
-- **`nmap_path`**: Absolute path to the Nmap executable. The default is set to "/home/linuxbrew/.linuxbrew/bin/nmap".
+- **`nmap_path`**: Absolute path to the Nmap executable. If left empty, the script auto-detects Nmap from the system's PATH. Set it explicitly only if Nmap is installed in a non-standard location.
 - **`alive_host`**: An IP address that is always reachable on your network, used to confirm VPN connectivity. Set this to an appropriate IP address based on your network (e.g., `192.168.1.1`).
 - **`ports`**: The ports you wish to scan on each IP. By default, port "22" (SSH) is specified. Adjust according to your needs.
 
 ## Usage
 
-1. **Configure the Script**: Modify `nmap_path`, `alive_host`, and `ports` variables in the script to reflect your specific network setup.
-   
+1. **Configure the Script**: Modify `alive_host` and `ports` variables in the script to reflect your specific network setup, and `nmap_path` only if Nmap lives outside the PATH.
+
 2. **Execute the Script**: Run the script with sudo to ensure it has the necessary permissions:
 `sudo ./unused_ip_finder.sh <IP range>`
 
